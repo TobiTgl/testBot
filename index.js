@@ -59,9 +59,11 @@ var job = new CronJob('* * * * *', function(){
         console.log(error);
     });
 
+    app.get('/letzterTermin', (req, res) => {
+      res.send(encodedData)
+    })
+
 } , null, true, 'Europe/Berlin');
 job.start();
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen(process.env.PORT || 3000)
