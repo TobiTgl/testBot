@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.send("HelloWorld!")
 })
 
-var job = new CronJob('* * * * *', function(){
+var job = new CronJob('00 20 * * 7', function(){
 
   var data = 'eyJ0ZXJtaW4iOiB7ImJpcyI6IDE2MzkzOTU5MDAsInZvbiI6IDE2MzkzOTU2MDAsIm1heGltYWwiOiA0LCJiZXJlaXRzZ2VidWNodCI6IDAsImJ1Y2hiYXJlWmVpdElEIjogNTU1NywiZ3J1cHBlbklEIjogMTM3LCJndWlkIjogIiIsIm5vY2hmcmVpIjogMCwicmVzb3VyY2VJRCI6IDIzNSwidGVybWluQXJ0SUQiOiAxNTV9LCJ0ZXJtaW5QYXRpZW50IjogeyJhdXN3ZWlzbnVtbWVyIjogbnVsbCwiYmVmdW5kVHJhbnNtaXRNZXRob2RzIjogWyJlbWFpbCIsInNtcyJdLCJlTWFpbCI6ICJ0b2JpYXNfODEzQHQtb25saW5lLmRlIiwiZ2VidXJ0c3RhZyI6IDg1OTY3NjQwMCwiZ2VzY2hsZWNodCI6ICJNIiwiaGFuZHlOciI6ICIwMTUxNzI2NjIyNDMiLCJoYXVzbnIiOiAiMTAiLCJpZCI6IDAsIm5hbWUiOiAiVGdlbCIsIm9ydCI6ICJJbGxlcnJpZWRlbiIsInBseiI6ICI4OTE4NiIsInN0cmFzc2UiOiAiQmlzY2hvZi1LZXR0ZWxlciBTdHIiLCJ2b3JuYW1lIjogIlRvYmlhcyJ9fQ';
 
@@ -44,7 +44,7 @@ var job = new CronJob('* * * * *', function(){
 
     var config = {
         method: 'post',
-        url: 'https://httpbin.org/post',
+        url: 'https://termin.deineanmeldung.de/api/v2/insertappointment',
         headers: { 
         'Content-Type': 'text/plain'
         },
